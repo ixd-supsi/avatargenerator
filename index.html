@@ -22,11 +22,14 @@
             }
             body {
                 background-color: white;
-                margin:3em;
+                margin: 0;
+            }
+            .main {
+                margin: 3em;
             }
             a{
                 text-decoration: none;
-                color:blue;
+                color: blue;
             }
             a:hover{
                 text-decoration: underline;
@@ -61,6 +64,14 @@
                 opacity: 0.2;
                 margin:1em 0 1em 0;
             }
+            #avatars{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #avatars img {
+                width:  10% !important;
+                height: auto !important;
+            }
             @media only screen and (max-width: 600px) {
                 .author {
                     display: block;
@@ -68,24 +79,32 @@
                 li {
                     margin-bottom: 1em;
                 }
+                #avatars img {
+                    width:  20% !important;
+                    height: auto !important;
+                }
             }
         </style>
     </head>
     <body>
-    	<h4>Avatar Generator</h4>
-    	<p>
-            SUPSI<br>
-            Corso di interaction design<br>
-            Docenti: Andreas Gysin, Giovanni Profeta<br>
-            <a class="link" href="https://github.com/ixd-supsi/avatargenerator">codice</a>
-        </p>
-        <hr>
-            <p>
-                L’avatar generator è un sistema di interfaccia che permetta di generare degli avatar di volti.
+        <div class="main">
+        	<h4>Avatar Generator</h4>
+        	<p>
+                SUPSI<br>
+                Corso di interaction design<br>
+                Docenti: Andreas Gysin, Giovanni Profeta<br>
+                <a class="link" href="https://github.com/ixd-supsi/avatargenerator">codice</a>
             </p>
-         <hr>
-            <p>2022</p>
-        <br/>
+            <hr>
+                <p>
+                    L’avatar generator è un sistema di interfaccia che permetta di generare degli avatar di volti.
+                </p>
+             <hr>
+                <p>2022</p>
+            <br/>
+        </div>
+        <div id="avatars"></div>
+        <div class="main">
             <ul>
                 <li><a href="https://moodyl.github.io/Grabbaffiti/">
                 <span class="author">Lauro Gianella</span><span>Grabbaffiti</span>
@@ -118,16 +137,57 @@
                 <span class="author">Elias Zobrist</span><span>Pixel Avatar</span>
                 </a></li>
             </ul>
-        <footer>
-            <hr>
-            <ul>
-                <li><a class="link" href="https://ixd-supsi.github.io/antologiainterattiva/">Antologia Interattiva</a></li>
-                <li><a class="link" href="https://ixd-supsi.github.io/atlantetecnologico/">Atlante Tecnologico</a></li>
-                <li class="attivo">Avatar generator</li>
-                <li><a class="link" href="https://ixd-supsi.github.io/conoscenzalibera/">Conoscenza Libera</a></li>
-                <li><a class="link" href="https://ixd-supsi.github.io/paroleincodice/">Parole in Codice</a></li>
-                <li><a class="link" href="https://ixd-supsi.github.io/quantifiedme/">Quantified Me</a></li>
-            </ul>
-        </footer>
+            <footer>
+                <hr>
+                <ul>
+                    <li><a class="link" href="https://ixd-supsi.github.io/antologiainterattiva/">Antologia Interattiva</a></li>
+                    <li><a class="link" href="https://ixd-supsi.github.io/atlantetecnologico/">Atlante Tecnologico</a></li>
+                    <li class="attivo">Avatar generator</li>
+                    <li><a class="link" href="https://ixd-supsi.github.io/conoscenzalibera/">Conoscenza Libera</a></li>
+                    <li><a class="link" href="https://ixd-supsi.github.io/paroleincodice/">Parole in Codice</a></li>
+                    <li><a class="link" href="https://ixd-supsi.github.io/quantifiedme/">Quantified Me</a></li>
+                </ul>
+            </footer>
+        </div>
     </body>
+    <script type="text/javascript">
+
+        const projects = [
+            "chibi",
+            "fantasy",
+            "grabbaffiti",
+            "incuby",
+            "letmespeak",
+            "moire",
+            "pixelart",
+            "throughmyeyes"
+        ]
+
+        const students = [
+            // "lauro",
+            "alessia",
+            "giulia"
+        ]
+
+        function load_avatars(){
+
+            const container = document.getElementById("avatars");
+
+            for (let x = 0; x < projects.length; x++){
+                for (let y = 0; y < students.length; y++){
+
+                    let img = document.createElement("img");
+                    img.src = "imgs/2022/" + projects[x] + "_" + students[y] + ".png";
+                    container.appendChild(img);
+
+                    let alt =  students[y] + "_" + projects[x]; 
+                    img.setAttribute("width", 400);
+                    img.setAttribute("height", 400);
+                    img.setAttribute("alt", alt);
+                }
+            }
+        } 
+        load_avatars();
+
+    </script>
 </html>
