@@ -71,6 +71,7 @@
             #avatars img {
                 width:  10% !important;
                 height: auto !important;
+                font-size: 0.5rem;
             }
             @media only screen and (max-width: 600px) {
                 .author {
@@ -153,36 +154,44 @@
     <script type="text/javascript">
 
         const projects = [
-            "chibi",
-            "fantasy",
             "grabbaffiti",
-            "incuby",
-            "letmespeak",
+            "throughmyeyes",
+            "avatargenerator",
             "moire",
+            "fantasy",
+            "letmespeak",
+            "chibi",
             "pixelart",
-            "throughmyeyes"
+            "caos",
+            "incuby"
         ]
 
         const students = [
-            // "lauro",
+            "lauro",
+            "sissi",
             "alessia",
-            "giulia"
+            "giorgio",
+            "alessandro",
+            "giulia",
+            "gwen",
+            "gabriele",
+            "giada",
+            "elias"
         ]
 
         function load_avatars(){
 
             const container = document.getElementById("avatars");
+            let count = 0;
 
             for (let x = 0; x < projects.length; x++){
                 for (let y = 0; y < students.length; y++){
 
-                    let img = document.createElement("img");
+                    let img = new Image(400, 400);
                     img.src = "imgs/2022/" + projects[x] + "_" + students[y] + ".png";
                     container.appendChild(img);
 
                     let alt =  students[y] + "_" + projects[x]; 
-                    img.setAttribute("width", 400);
-                    img.setAttribute("height", 400);
                     img.setAttribute("alt", alt);
                 }
             }
