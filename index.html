@@ -60,7 +60,7 @@
                 width: 1.25em;
                 content: "→";
             }
-            hr{
+            hr {
                 opacity: 0.2;
                 margin:1em 0 1em 0;
             }
@@ -70,8 +70,12 @@
             }
             #avatars img {
                 width:  10% !important;
-                height: auto !important;
+                height: auto;
                 font-size: 0.5rem;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
             }
             @media only screen and (max-width: 600px) {
                 .author {
@@ -117,10 +121,10 @@
                 <span class="author">Alessia La Rocca</span><span>Through my eyes</span>
                 </a></li>
                 <li>
-                <span class="author">Nicotera Giorgio</span><span>...</span>
+                <span class="author">Nicotera Giorgio</span><span>Incuby</span>
                 </li>
                 <li><a href="https://jokerboyz.github.io/AvatarGenerator/">
-                <span class="author">Alessandro Plantera</span><span>Avatar Generator</span>
+                <span class="author">Alessandro Plantera</span><span>Caos</span>
                 </a></li>
                 <li><a href="https://giuliaponti.github.io/moire/">
                 <span class="author">Giulia Ponti</span><span>Moiré</span>
@@ -154,16 +158,46 @@
     <script type="text/javascript">
 
         const projects = [
-            "grabbaffiti",
-            "throughmyeyes",
-            "avatargenerator",
-            "moire",
-            "fantasy",
-            "letmespeak",
-            "chibi",
-            "pixelart",
-            "caos",
-            "incuby"
+            {
+                "name": "grabbaffiti",
+                "link": "https://moodyl.github.io/Grabbaffiti/"
+            },
+            {
+                "name": "-",
+                "link": ""
+            },
+            {
+                "name": "throughmyeyes",
+                "link": "https://alessialarocca.github.io/through-my-eyes/"
+            },
+            {
+                "name": "incuby",
+                "link": ""
+            },
+            {
+                "name": "caos",
+                "link": "https://jokerboyz.github.io/AvatarGenerator/"
+            },
+            {
+                "name": "moire",
+                "link": "https://giuliaponti.github.io/moire/"
+            },
+            {
+                "name": "fantasytypo",
+                "link": "https://gwentogni.github.io/Fantasy-tipo/"
+            },
+            {
+                "name": "letmespeak",
+                "link": "https://gabrielevanzz.github.io/avatarss/"
+            },
+            {
+                "name": "chibi",
+                "link": "https://giadavegliante.github.io/Chibi-Generator/"
+            },
+            {
+                "name": "pixelart",
+                "link": "https://elizob.github.io/Pixel_Avatar/"
+            }
         ]
 
         const students = [
@@ -187,12 +221,12 @@
             for (let x = 0; x < projects.length; x++){
                 for (let y = 0; y < students.length; y++){
 
-                    let img = new Image(400, 400);
-                    img.src = "imgs/2022/" + projects[x] + "_" + students[y] + ".png";
-                    container.appendChild(img);
+                    let alt =  students[y] + "_" + projects[x].name; 
+                    let img = "<img src='imgs/2022/" + projects[x].name + "_" + students[y] + ".png' alt=" + alt + " width='400' height='400'>";
+                    let link = "<a href='" + projects[x].link + "' title='" + projects[x].name  + "'>";
+                    let output = img;
 
-                    let alt =  students[y] + "_" + projects[x]; 
-                    img.setAttribute("alt", alt);
+                    container.innerHTML += output;
                 }
             }
         } 
