@@ -11,11 +11,15 @@ function load_menu(){
             "link": "atlantetecnologico"
         },
         {
+            "name": "Avatar generator (new)",
+            "link": "avatargenerator"
+        },
+        {
             "name": "Conoscenza Libera",
             "link": "conoscenzalibera"
         },
         {
-            "name": "Inter-faccia",
+            "name": "Inter-faccia (new)",
             "link": "inter-faccia"
         },
         {
@@ -27,7 +31,7 @@ function load_menu(){
             "link": "quantifiedme"
         },
         {
-            "name": "Specchio delle mie Brame",
+            "name": "Specchio delle mie Brame (new)",
             "link": "specchiodellemiebrame"
         }
     ]
