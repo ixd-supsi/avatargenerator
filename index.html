@@ -119,9 +119,9 @@
                 <li><a href="https://alessialarocca.github.io/through-my-eyes/">
                 <span class="author">Alessia La Rocca</span><span>Through my eyes</span>
                 </a></li>
-                <li>
+                <li><a href="https://nickkgio.github.io/INCUBY/">
                 <span class="author">Nicotera Giorgio</span><span>Incuby</span>
-                </li>
+                </a></li>
                 <li><a href="https://jokerboyz.github.io/AvatarGenerator/">
                 <span class="author">Alessandro Plantera</span><span>Caos</span>
                 </a></li>
@@ -146,19 +146,11 @@
         <div class="main">
             <footer>
                 <hr>
-                <ul>
-                    <li><a class="link" href="https://ixd-supsi.github.io/antologiainterattiva/">Antologia Interattiva</a></li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/atlantetecnologico/">Atlante Tecnologico</a></li>
-                    <li class="attivo">Avatar Generator</li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/conoscenzalibera/">Conoscenza Libera</a></li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/inter-faccia/">Inter-faccia</a></li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/paroleincodice/">Parole in Codice</a></li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/quantifiedme/">Quantified Me</a></li>
-                    <li><a class="link" href="https://ixd-supsi.github.io/specchiodellemiebrame/">Specchio delle mie Brame</a></li>
-                </ul>
+                <ul id ="menu"></ul>
             </footer>
         </div>
     </body>
+    <script type="text/javascript" src="script/menu.js"></script>
     <script type="text/javascript">
 
         const projects = [
@@ -176,7 +168,7 @@
             },
             {
                 "name": "incuby",
-                "link": ""
+                "link": "https://nickkgio.github.io/INCUBY/"
             },
             {
                 "name": "caos",
@@ -219,7 +211,7 @@
 
         function load_avatars(){
 
-            const container = document.getElementById("avatars");
+            const container_avatar = document.getElementById("avatars");
             let count = 0;
 
             for (let x = 0; x < projects.length; x++){
@@ -230,7 +222,7 @@
                     let link = "<a href='" + projects[x].link + "' title='" + projects[x].name  + "'>";
                     let output = img;
 
-                    container.innerHTML += output;
+                    container_avatar.innerHTML += output;
                 }
             }
         } 
