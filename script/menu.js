@@ -35,7 +35,6 @@ function load_menu(){
     for (let x = 0; x < pages.length; x++){
         container.innerHTML += "<li><a class='link' href=https://ixd-supsi.github.io/" + pages[x].link + ">" + pages[x].name +" </a></li>"
     }                
-
 }
 
 document.addEventListener("DOMContentLoaded", function(){
