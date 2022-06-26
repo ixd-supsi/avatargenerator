@@ -1,13 +1,5 @@
 const projects = [
     {
-        "name": "grabbaffiti",
-        "link": "https://moodyl.github.io/Grabbaffiti/"
-    },
-    {
-        "name": "-",
-        "link": ""
-    },
-    {
         "name": "throughmyeyes",
         "link": "https://alessialarocca.github.io/through-my-eyes/"
     },
@@ -41,9 +33,12 @@ const projects = [
     }
 ]
 
+    // {
+    //     "name": "grabbaffiti",
+    //     "link": "https://moodyl.github.io/Grabbaffiti/"
+    // },
+    
 const students = [
-    "lauro",
-    "sissi",
     "alessia",
     "giorgio",
     "alessandro",
