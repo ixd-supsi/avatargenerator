@@ -53,18 +53,19 @@ function load_avatars(){
 
     const container_avatar = document.getElementById("avatars");
     let count = 0;
+    let output = ''
 
     for (let x = 0; x < projects.length; x++){
         for (let y = 0; y < students.length; y++){
 
             let alt =  students[y] + "_" + projects[x].name; 
-            let img = "<img src='imgs/2022/" + projects[x].name + "_" + students[y] + ".png' alt=" + alt + " width='400' height='400'>";
+            let img = "<img src='imgs/2022/" + projects[x].name + "_" + students[y] + ".png' alt=" + alt + ">";
             let link = "<a href='" + projects[x].link + "' title='" + projects[x].name  + "'>";
-            let output = img;
+            output += img;
 
-            container_avatar.innerHTML += output;
         }
     }
+    container_avatar.innerHTML = output;
 } 
 
 document.addEventListener("DOMContentLoaded", function(){
